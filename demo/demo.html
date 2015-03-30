@@ -2,45 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="demo.css">
     <title>Test waterfall</title>
-    <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    .wf-container {
-        position: relative;
-        margin: 0 auto;
-    }
-    .wf-container:before,.wf-container:after {
-        content: '';
-        display: table;
-    }
-    .wf-container:after {
-        clear: both;
-    }
-    .wf-box {
-        margin: 10px;
-    }
-    .wf-box img { 
-        display: block;
-        width: 100%;
-    }
-    .wf-box .content {
-        border: 1px solid #ccc;
-        border-top-width: 0;
-    }
-    .wf-column {
-        float: left;
-    }
-
-    @media screen and (min-width: 768px) {
-        .wf-container { width: 750px; }
-    }
-    @media screen  and (min-width: 992px) {
-        .wf-container { width: 970px; }
-    }
-    @media screen and (min-width: 1200px) {
-        .wf-container { width: 1170px; }
-    }
-    </style>
 </head>
 <body>
     <div class="wf-container">
@@ -122,34 +85,7 @@
             </div>
         </div>
     </div>
-    <script src="responsive_waterfall.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function(e) {
-            var waterfall = new Waterfall();
-
-            setInterval(function() {
-                waterfall.addBox(newNode());
-            }, 2000);
-
-            function newNode() {
-                var box = document.createElement('div');
-                box.className = 'wf-box';
-                var image = document.createElement('img');
-                image.src = "http://placehold.it/660x250";
-                box.appendChild(image);
-                var content = document.createElement('div');
-                content.className = 'content';
-                var title = document.createElement('h3');
-                title.appendChild(document.createTextNode('Heading'));
-                content.appendChild(title);
-                var p = document.createElement('p');
-                p.appendChild(document.createTextNode('Content here'));
-                content.appendChild(p);
-                box.appendChild(content);
-
-                return box;
-            }
-        });
-    </script>
+    <script src="../responsive_waterfall.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
