@@ -2,7 +2,7 @@
 
 Responsive waterfall grid implement in pure javascript without any dependencies. Compatibility: IE9+
 
-[Demo here]()
+[Demo here](http://leozdgao.github.io/demo/responsive_waterfall/)
 
 ### Installation
 
