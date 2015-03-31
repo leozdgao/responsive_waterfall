@@ -1,7 +1,55 @@
+/* reset */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+body {
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;http://placehold.it/300x600/E97452/fff
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #419aff;
+}
+a:hover { color: #41ccff; }
+
+/* customize button */
+.btn {
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn:active {
+    background-image: none;
+    outline: 1;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn.btn-primary {
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn.btn-primary:hover {
+    background-color: #e6e6e6;
+}
+
+/* header */
+.header {
+    background: #eee;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.header p {
+    margin: 12px 0;
+}
+.header .btn-group {
+    margin: 8px 0;
+}
+
+/* style for waterfall grid */
 .wf-container {
-    position: relative;
     margin: 0 auto;
 }
 .wf-container:before,.wf-container:after {
@@ -21,6 +69,7 @@
 .wf-box .content {
     border: 1px solid #ccc;
     border-top-width: 0;
+    padding: 5px 8px;
 }
 .wf-column {
     float: left;

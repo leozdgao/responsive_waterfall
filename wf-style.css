@@ -1,0 +1,10 @@
+.wf-container:before,.wf-container:after {
+    content: '';
+    display: table;
+}
+.wf-container:after {
+    clear: both;
+}
+.wf-column {
+    float: left;
+}

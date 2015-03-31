@@ -1,5 +1,16 @@
 (function() {
     var Waterfall = function(opts) {
+        var minBoxWidth;
+        Object.defineProperty(this, 'minBoxWidth', {
+            get: function() { return minBoxWidth; },
+            set: function(value) {
+                if(value < 100) value = 100;
+                if(value > 1000) value = 1000;
+                
+                minBoxWidth = value;
+            }
+        });
+
         opts = opts || {};
         var containerSelector = opts.containerSelector || '.wf-container';
         var boxSelector = opts.boxSelector || '.wf-box';
@@ -33,6 +44,7 @@
         });
     }
 
+    // compute the number of columns under current setting
     Waterfall.prototype.computeNumberOfColumns = function() {
         var num = Math.floor(this.container.clientWidth / this.minBoxWidth);
         num = num || 1; // at least one column
@@ -40,6 +52,7 @@
         return num;
     }
 
+    // init enough columns and set the width
     Waterfall.prototype.initColumns = function(num) {
         if(num > 0) {
             // create column div
@@ -55,6 +68,7 @@
         }
     }
 
+    // get the index of shortest column
     Waterfall.prototype.getMinHeightIndex = function() {
         if(this.columns && this.columns.length > 0) {
             var min = this.columns[0].clientHeight, index = 0;
@@ -70,6 +84,7 @@
         else return -1;
     }
 
+    // compose core
     Waterfall.prototype.compose = function(force) {
         var num = this.computeNumberOfColumns();
         var cols = this.columns.length;
@@ -92,6 +107,7 @@
         }
     }
 
+    // add a new box to grid
     Waterfall.prototype.addBox = function(elem) {
         // push if new box
         if(this.boxes.indexOf(elem) < 0) this.boxes.push(elem);
