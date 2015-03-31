@@ -1,5 +1,6 @@
 (function() {
     var Waterfall = function(opts) {
+        // define property
         var minBoxWidth;
         Object.defineProperty(this, 'minBoxWidth', {
             get: function() { return minBoxWidth; },
@@ -42,7 +43,7 @@
         window.addEventListener('resize', function() {
             that.compose();
         });
-    }
+    };
 
     // compute the number of columns under current setting
     Waterfall.prototype.computeNumberOfColumns = function() {
@@ -50,7 +51,7 @@
         num = num || 1; // at least one column
 
         return num;
-    }
+    };
 
     // init enough columns and set the width
     Waterfall.prototype.initColumns = function(num) {
@@ -66,7 +67,7 @@
                 this.container.appendChild(column);
             }
         }
-    }
+    };
 
     // get the index of shortest column
     Waterfall.prototype.getMinHeightIndex = function() {
@@ -82,7 +83,23 @@
             return index;
         }
         else return -1;
-    }
+    };
+
+    // get the index of highset column
+    Waterfall.prototype.getHighestIndex = function() {
+        if(this.columns && this.columns.length > 0) {
+            var max = this.columns[0].clientHeight, index = 0;
+            for (var i = 1; i < this.columns.length; i++) {
+                var columnElem = this.columns[i];
+                if(columnElem.clientHeight > max) {
+                    max = columnElem.clientHeight;
+                    index = i;
+                }
+            }
+            return index;
+        }
+        else return -1;
+    };
 
     // compose core
     Waterfall.prototype.compose = function(force) {
@@ -105,7 +122,7 @@
                 this.addBox(box);
             }
         }
-    }
+    };
 
     // add a new box to grid
     Waterfall.prototype.addBox = function(elem) {
@@ -117,7 +134,7 @@
             var column = this.columns[columnIndex];
             column.appendChild(elem);
         }
-    }
+    };
 
     window.Waterfall = Waterfall;
-})()
+})();

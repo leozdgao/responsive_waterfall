@@ -24,6 +24,27 @@ window.addEventListener('DOMContentLoaded', function(e) {
         waterfall.compose(true);
     });
 
+    window.onscroll = function() {
+        var i = waterfall.getHighestIndex();
+        if(i > -1) {
+            // get last box of the column
+            var lastBox = Array.prototype.slice.call(waterfall.columns[i].children, -1)[0];
+            if(checkSlide(lastBox)) {
+                var count = 5;
+                while(count--) waterfall.addBox(boxHandle());
+            }
+        }
+    };
+
+    function checkSlide(elem) {
+        if(elem) {
+            var screenHeight = (document.documentElement.scrollTop || document.body.scrollTop) +
+                               (document.documentElement.clientHeight || document.body.clientHeight); console.log(screenHeight);
+            var elemHeight = elem.offsetTop + elem.offsetHeight / 2;
+
+            return elemHeight < screenHeight;
+        }
+    }
 
     function newNode() {
         var size = ['660x250', '300x400', '350x500', '200x320', '300x300'];
@@ -50,6 +71,6 @@ window.addEventListener('DOMContentLoaded', function(e) {
             if(++i === size.length) i = 0;
 
             return box;
-        }
+        };
     }
 });
