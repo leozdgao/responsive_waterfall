@@ -31,6 +31,17 @@ Internally, I use getter/setter by ES5 Object API, the `minBoxWidth` will never 
 
 If you want to customize the style of each column, you can define your own style for `.wf-column` in your css file.
 
+Commomly, you will need to lazy load data and insert them to your view, so you can use `waterfall.addbox` to add the boxes, and re-compose after your adding.
+
+```javascript
+var btn = document.getElementById('add-btn');
+var boxHandle = newNode(); // simulation for getting box
+btn.addEventListener('click', function() {
+
+    waterfall.addBox(boxHandle());
+});
+```
+
 ### License
 
 MIT
