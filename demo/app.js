@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function(e) {
     function checkSlide(elem) {
         if(elem) {
             var screenHeight = (document.documentElement.scrollTop || document.body.scrollTop) +
-                               (document.documentElement.clientHeight || document.body.clientHeight); console.log(screenHeight);
+                               (document.documentElement.clientHeight || document.body.clientHeight);
             var elemHeight = elem.offsetTop + elem.offsetHeight / 2;
 
             return elemHeight < screenHeight;
