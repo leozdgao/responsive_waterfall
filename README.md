@@ -2,7 +2,7 @@
 
 Responsive waterfall grid implement in pure javascript without any dependencies. Compatibility: IE9+
 
-[Demo here](http://leozdgao.github.io/demo/responsive_waterfall/)
+[Demo here](http://leozdgao.github.io/responsive_waterfall/)
 
 ### Installation
 
@@ -20,7 +20,7 @@ What you need to do is invoke the constructor and tell it how to select the cont
 
 ```javascript
 // use querySelector/querySelectorAll internally
-var waterfall = new Waterfall({ 
+var waterfall = new Waterfall({
 	containerSelector: '.wf-container',
 	boxSelector: '.wf-box',
 	minBoxWidth: 250
