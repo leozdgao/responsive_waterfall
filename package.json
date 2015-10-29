@@ -1,0 +1,18 @@
+{
+  "name": "responsive_waterfall",
+  "version": "1.0.0",
+  "description": "waterfall flow",
+  "main": "responsive_waterfall.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leozdgao/responsive_waterfall.git"
+  },
+  "author": "leozdgao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leozdgao/responsive_waterfall/issues"
+  },
+  "homepage": "https://github.com/leozdgao/responsive_waterfall#readme"
+}
