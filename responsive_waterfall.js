@@ -1,4 +1,4 @@
-(function() {
+;(function() {
   'use strict';
   var Waterfall = function(opts) {
     // define property
