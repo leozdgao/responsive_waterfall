@@ -124,7 +124,7 @@
         // remove old column
         for (var i = 0; i < this.columns.length; i++) {
           var columnElem = this.columns[i];
-          columnElem.remove();
+          this.container.removeChild(columnElem);
         }
 
         // init new column
